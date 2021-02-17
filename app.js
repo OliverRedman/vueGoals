@@ -4,6 +4,7 @@ const app = Vue.createApp({
       goals: [],
       enteredValue: "",
       counter: 0,
+      tog: true,
     };
   },
   methods: {
@@ -14,13 +15,21 @@ const app = Vue.createApp({
       } else alert("goal must be atleast 1 character in length");
       this.counter++;
     },
-    delet(e) {
-      if (e.target.classList.contains("linethrough")) {
-        e.target.parentNode.removeChild(e.target);
+    delet(index) {
+      if (index.target.classList.contains("linethrough")) {
+        this.goals.splice(index, 1);
         this.counter--;
       } else {
-        e.target.classList.add("linethrough");
+        index.target.classList.add("linethrough");
       }
+    },
+    toggle() {
+      this.tog = !this.tog;
+    },
+  },
+  computed: {
+    buttonCaption() {
+      return this.tog ? "Hide" : "Show";
     },
   },
 }).mount("#app");

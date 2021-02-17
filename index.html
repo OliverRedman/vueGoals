@@ -8,19 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        <label for="goal">Goal</label>
+      <div class="a">
+        <label>Goal</label>
         <input
           @keyup.enter="addGoal"
           type="text"
           id="goal"
           v-model="enteredValue"
         />
-        <button v-on:click="addGoal">Add Goal</button>
+        <button @click="addGoal">Add Goal</button>
+        <button @click="toggle">{{buttonCaption}}</button>
+
         <p>overall goals {{counter}}</p>
       </div>
-      <ul>
-        <li v-on:click="delet" v-for="goal in goals">{{goal}}</li>
+      <ul class="b">
+        <li v-on:click="delet" v-if="tog" v-for="(goal, index) in goals">
+          {{goal}}
+        </li>
       </ul>
     </div>
     <script src="https://unpkg.com/vue@next"></script>

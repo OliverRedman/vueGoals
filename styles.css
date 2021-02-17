@@ -9,12 +9,27 @@ html {
 body {
   margin: 0;
 }
-
+.a {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 20em;
+}
+.b {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.a button {
+  margin: 0 3em 1em 3em;
+}
 #app {
-  margin: 3rem auto;
-  max-width: 40rem;
+  margin: 5rem auto;
+  width: 100%;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 label,
@@ -30,14 +45,15 @@ label {
 
 ul {
   list-style: none;
-  margin: 1rem 0;
+  margin: 1rem 8rem;
   padding: 0;
 }
 
 li {
-  margin: 1rem 0;
+  margin: 1rem 0.5rem;
   padding: 1rem;
   border: 1px solid #ccc;
+  text-align: center;
 }
 .linethrough {
   text-decoration: line-through;
